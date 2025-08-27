@@ -1,0 +1,177 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+header, main {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== HEADER ===== */
+.flyer-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #c40000; /* deep red */
+  color: #fff;
+  padding: 1rem;
+}
+
+.logo-area {
+  width: 100px;
+  height: 100px;
+  /* background: #fff;/ */
+}
+
+.logo-area img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.title-area h1 {
+  font-size: 1.8rem;
+}
+
+.title-area h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+/* NAVBAR STYLES */
+.navbar ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffcccc;
+}
+
+
+/* ===== MAIN CONTAINER ===== */
+.flyer-main {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+section {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-left: 5px solid #c40000;
+}
+
+section h3 {
+  color: #c40000;
+  margin-bottom: 0.8rem;
+}
+
+/* ===== SUBSECTION STYLES ===== */
+.subsection {
+  margin-bottom: 1rem;
+}
+
+.subsection h4 {
+  color: #000;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.differentiators {
+  background: #fff5f5; /* light red tint */
+  border-left: 5px solid #c40000;
+  padding: 1rem;
+}
+
+.differentiators h3 {
+  color: #c40000;
+  margin-bottom: 0.8rem;
+}
+
+.differentiators ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.differentiators ul li::before {
+  content: "✔";
+  color: #c40000;
+  position: absolute;
+  left: 0;
+}
+
+/* ===== FOOTER ===== */
+.flyer-footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+}
+
+
+/* Responsive: stack nav links on small screens */
+@media (max-width: 768px) {
+  .flyer-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+
+/* ===== PRINT STYLING =====
+      @media print {
+        body {
+          background: #fff;
+          color: #000;
+        }
+        .flyer-header {
+          -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+        }
+        section {
+          border-left: 3px solid #c40000;
+          background: #fff;
+        }
+      } */

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dirt Hunters Cleaning Services - Capability Statement</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ===== RESET ===== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        color: #222;
+        background: #fff;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      /* ===== HEADER ===== */
+      .flyer-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: #c40000; /* deep red */
+        color: #fff;
+        padding: 1rem;
+      }
+
+      .logo-area {
+        width: 100px;
+        height: 100px;
+        /* background: #fff;/ */
+      }
+
+      .logo-area img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      .title-area h1 {
+        font-size: 1.8rem;
+      }
+
+      .title-area h2 {
+        font-size: 1.2rem;
+        font-weight: normal;
+      }
+
+      /* ===== MAIN CONTAINER ===== */
+      .flyer-main {
+        display: grid;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      section {
+        background: #f9f9f9;
+        padding: 1rem;
+        border-left: 5px solid #c40000;
+      }
+
+      section h3 {
+        color: #c40000;
+        margin-bottom: 0.8rem;
+      }
+
+      /* ===== SUBSECTION STYLES ===== */
+      .subsection {
+        margin-bottom: 1rem;
+      }
+
+      .subsection h4 {
+        color: #000;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0.3rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .differentiators {
+        background: #fff5f5; /* light red tint */
+        border-left: 5px solid #c40000;
+        padding: 1rem;
+      }
+
+      .differentiators h3 {
+        color: #c40000;
+        margin-bottom: 0.8rem;
+      }
+
+      .differentiators ul li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.2rem;
+        position: relative;
+      }
+
+      .differentiators ul li::before {
+        content: "✔";
+        color: #c40000;
+        position: absolute;
+        left: 0;
+      }
+
+      /* ===== FOOTER ===== */
+      .flyer-footer {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      /* ===== PRINT STYLING =====
+      @media print {
+        body {
+          background: #fff;
+          color: #000;
+        }
+        .flyer-header {
+          -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+        }
+        section {
+          border-left: 3px solid #c40000;
+          background: #fff;
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="flyer-header">
+      <div class="logo-area">
+        <img src="logo.png" alt="" />
+      </div>
+      <div class="title-area">
+        <h1>Dirt Hunters Cleaning Services</h1>
+        <h2>Bringing the best cleaning services</h2>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="#company-overview">Overview</a></li>
+          <li><a href="#core-competencies">Competencies</a></li>
+          <li><a href="#company-snapshot">Snapshot</a></li>
+          <li><a href="#naics-codes">NAICS Codes</a></li>
+          <li><a href="#additional-info">Info</a></li>
+          <li><a href="#differentiators">Differentiators</a></li>
+          <li><a href="#contact-details">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="flyer-main">
+      <section class="company-overview">
+        <h3>Company Overview</h3>
+        <p>
+          Dirt Hunters Cleaning Services is known for quality services,
+          exceptional efficiency and the highest level of professionalism. No
+          matter what service you’re looking for, we guarantee to not only meet,
+          but exceed your expectations and ensure your full satisfaction. Our
+          team is up for every job, managing projects with the skill and
+          experience our clients have come to expect.
+        </p>
+      </section>
+
+      <section class="core-competencies">
+        <h3>Core Competencies</h3>
+        <p>
+          Dirt Hunters Cleaning Services finishes each project on schedule and
+          with highest level of quality. With focus on personalized services,
+          competitive rates and customer satisfaction, we’re always striving to
+          meet and exceed expectations.
+        </p>
+        <ul>
+          <li>Vacuum Services</li>
+          <li>Sweeping and Mopping Services</li>
+          <li>Blow Out Clean Services</li>
+          <li>Window Cleaning</li>
+          <li>Lawn Services</li>
+          <li>Snow Removal</li>
+          <li>Parking Lot</li>
+        </ul>
+      </section>
+
+      <!-- ===== DIFFERENTIATORS ===== -->
+      <section class="differentiators">
+        <h3>Differentiators</h3>
+        <ul>
+          <li
+            >Exceptional in providing customer satisfaction –
+            <em>"Your satisfaction is our Priority."</em></li
+          >
+          <li>Phenomenal strict Quality Control Standards</li>
+          <li>Qualified business best-in-industry solution</li>
+          <li
+            >Use scientific method to determine effectiveness of our cleaning
+            method</li
+          >
+          <li>Reliable Year-Round Scheduling</li>
+          <li>Eco-friendly cleaning products</li>
+          <li>Free on-site estimates</li>
+          <li>Affordable Cleaning Services</li>
+        </ul>
+      </section>
+
+      <section class="company-snapshot">
+        <h3>Company Snapshot</h3>
+        <ul>
+          <li
+            ><strong>Business Name:</strong> Dirt Hunters Cleaning Services</li
+          >
+          <li><strong>DUNS #:</strong> 117111375</li>
+          <li><strong>CAGE Code:</strong> 8CAN3</li>
+        </ul>
+      </section>
+
+      <section class="naics-codes">
+        <h3>NAICS Codes</h3>
+        <ul>
+          <li>561710 – Exterminating and Pest Control Services</li>
+          <li>561720 – Janitorial Services</li>
+          <li>561730 – Landscaping Services</li>
+          <li>337127 – Carpet and Upholstery Cleaners</li>
+          <li>561790 – Other Services to Buildings and Dwelling</li>
+        </ul>
+      </section>
+
+      <!-- ===== CONTINUATION ===== -->
+      <section class="additional-info">
+        <h3>Additional Information</h3>
+
+        <div class="subsection past-performance">
+          <h4>Past Performance</h4>
+          <ul>
+            <li>Commercial, Building Contracts</li>
+            <li>Move in/ move out Condos</li>
+            <li>Upundel Capital House (2018)</li>
+            <li>CSE-Court Condos (2015)</li>
+            <li>Kentucky Monor Building</li>
+            <li>Airanchus Building</li>
+            <li>Chelsea Building (2014)</li>
+            <li>Davmar Building (2016)</li>
+          </ul>
+        </div>
+
+        <div class="subsection certifications">
+          <h4>Certifications</h4>
+          <ul>
+            <li>Licensed & Insured Cleaning Contractor</li>
+            <li>OSHA Safety Certified Staff</li>
+            <li>Green Cleaning Certification</li>
+          </ul>
+        </div>
+
+        <div class="subsection contact-details">
+          <h4>Contact Information</h4>
+          <p><strong>Phone:</strong> (123) 456‑7890</p>
+          <p><strong>Email:</strong> info@dirthunters.com</p>
+          <p><strong>Website:</strong> www.dirthunters.com</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="flyer-footer">
+      <p>&copy; 2025 Dirt Hunters Cleaning Services. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
