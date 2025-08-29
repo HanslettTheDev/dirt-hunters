@@ -1,288 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dirt Hunters Cleaning Services - Capability Statement</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      /* ===== RESET ===== */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        color: #222;
-        background: #fff;
-        line-height: 1.6;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-      }
-
-      ul {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      /* ===== HEADER ===== */
-      .flyer-header {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        background: #c40000; /* deep red */
-        color: #fff;
-        padding: 1rem;
-      }
-
-      .logo-area {
-        width: 100px;
-        height: 100px;
-        /* background: #fff;/ */
-      }
-
-      .logo-area img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-      }
-
-      .title-area h1 {
-        font-size: 1.8rem;
-      }
-
-      .title-area h2 {
-        font-size: 1.2rem;
-        font-weight: normal;
-      }
-
-      /* ===== MAIN CONTAINER ===== */
-      .flyer-main {
-        display: grid;
-        gap: 1.5rem;
-        padding: 1.5rem;
-      }
-
-      section {
-        background: #f9f9f9;
-        padding: 1rem;
-        border-left: 5px solid #c40000;
-      }
-
-      section h3 {
-        color: #c40000;
-        margin-bottom: 0.8rem;
-      }
-
-      /* ===== SUBSECTION STYLES ===== */
-      .subsection {
-        margin-bottom: 1rem;
-      }
-
-      .subsection h4 {
-        color: #000;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 0.3rem;
-        margin-bottom: 0.3rem;
-      }
-
-      .differentiators {
-        background: #fff5f5; /* light red tint */
-        border-left: 5px solid #c40000;
-        padding: 1rem;
-      }
-
-      .differentiators h3 {
-        color: #c40000;
-        margin-bottom: 0.8rem;
-      }
-
-      .differentiators ul li {
-        margin-bottom: 0.5rem;
-        padding-left: 1.2rem;
-        position: relative;
-      }
-
-      .differentiators ul li::before {
-        content: "✔";
-        color: #c40000;
-        position: absolute;
-        left: 0;
-      }
-
-      /* ===== FOOTER ===== */
-      .flyer-footer {
-        background: #000;
-        color: #fff;
-        text-align: center;
-        padding: 0.8rem;
-        font-size: 0.9rem;
-      }
-
-      /* ===== PRINT STYLING =====
-      @media print {
-        body {
-          background: #fff;
-          color: #000;
-        }
-        .flyer-header {
-          -webkit-print-color-adjust: exact;
-          color-adjust: exact;
-        }
-        section {
-          border-left: 3px solid #c40000;
-          background: #fff;
-        }
-      } */
-    </style>
-  </head>
-  <body>
-    <!-- ===== HEADER ===== -->
-    <header class="flyer-header">
-      <div class="logo-area">
-        <img src="logo.png" alt="" />
-      </div>
-      <div class="title-area">
-        <h1>Dirt Hunters Cleaning Services</h1>
-        <h2>Bringing the best cleaning services</h2>
-      </div>
-
-      <nav class="navbar">
-        <ul>
-          <li><a href="#company-overview">Overview</a></li>
-          <li><a href="#core-competencies">Competencies</a></li>
-          <li><a href="#company-snapshot">Snapshot</a></li>
-          <li><a href="#naics-codes">NAICS Codes</a></li>
-          <li><a href="#additional-info">Info</a></li>
-          <li><a href="#differentiators">Differentiators</a></li>
-          <li><a href="#contact-details">Contact</a></li>
-        </ul>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirt Hunters Cleaning Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <div style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px; background: linear-gradient(45deg, #FF0000, #FF4444); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">DH</div>
+                DIRT HUNTERS
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <a href="#schedule" class="btn-primary">
+                <i class="fas fa-calendar-alt"></i> Book Schedule
+            </a>
+        </nav>
     </header>
 
-    <!-- ===== MAIN CONTENT ===== -->
-    <main class="flyer-main">
-      <section class="company-overview">
-        <h3>Company Overview</h3>
-        <p>
-          Dirt Hunters Cleaning Services is known for quality services,
-          exceptional efficiency and the highest level of professionalism. No
-          matter what service you’re looking for, we guarantee to not only meet,
-          but exceed your expectations and ensure your full satisfaction. Our
-          team is up for every job, managing projects with the skill and
-          experience our clients have come to expect.
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="tagline">HIGHLY PROFESSIONAL CLEANING</div>
+                    <h1>
+                        <span class="highlight">EASY TO CLEAN</span><br>
+                        HOUSE AND OFFICE
+                    </h1>
+                    <p class="subtitle">
+                        Dirt Hunters Cleaning Services is known for quality services, exceptional efficiency and the highest level of professionalism. No matter what service you're looking for, we guarantee to exceed your expectations.
+                    </p>
+                    <a href="#quote" class="btn-primary">
+                        <i class="fas fa-comment-dollar"></i> Get a Quote
+                    </a>
+                </div>
+                <div class="hero-image">
+                    <div class="sparkle">✨</div>
+                    <div class="sparkle">✨</div>
+                    <div class="sparkle">✨</div>
+                    <div class="sparkle">✨</div>
+                    <div class="sparkle">✨</div>
+                    <div style="width: 400px; height: 400px; background: none; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin: 0 auto; box-shadow: 0 15px 35px rgba(255, 0, 0, 0.3);">
+                        <img style="object-fit: cover; border-radius: 20px;" src="logo-.png" alt="Official Dirt Hunters Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-content">
+                Dirt Hunters Cleaning Services finishes each project on schedule and with highest level of quality. With focus on personalized services, competitive rates and customer satisfaction, we're always striving to meet and exceed expectations.
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-vial-circle-check"></i>
+                    </div>
+                    <h3>Vacuum Services</h3>
+                    <p>Professional vacuum cleaning for all surfaces with industrial-grade equipment</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Sweeping and Mopping</h3>
+                    <p>Thorough floor cleaning and maintenance for all types of flooring</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Blow Out Clean Services</h3>
+                    <p>Deep cleaning with specialized equipment for hard-to-reach areas</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-window-restore"></i>
+                    </div>
+                    <h3>Window Cleaning</h3>
+                    <p>Crystal clear window cleaning services for both interior and exterior</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Lawn Services</h3>
+                    <p>Complete lawn care and maintenance including mowing and landscaping</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Snow Removal</h3>
+                    <p>Professional winter snow removal services for driveways and walkways</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3>Parking Lot Cleaning</h3>
+                    <p>Professional parking lot cleaning and maintenance services</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3>Pressure Washing</h3>
+                    <p>High-pressure washing for exterior surfaces, decks, and patios</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Snapshot -->
+    <section class="content-section snapshot">
+        <div class="container">
+            <h2 class="section-title">Company Snapshot</h2>
+            <p class="section-content">
+                Learn more about our company credentials and identification codes that showcase our legitimacy and professionalism in the cleaning industry.
+            </p>
+            
+            <div class="company-grid">
+                <div class="company-card">
+                    <div class="company-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="company-details">
+                        <h3>Business Name</h3>
+                        <p>Dirt Hunters Cleaning Services</p>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="company-details">
+                        <h3>DUNS Number</h3>
+                        <p>117111375</p>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div class="company-details">
+                        <h3>CAGE Code</h3>
+                        <p>8CAN3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAICS Codes -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">NAICS Codes</h2>
+            <p class="section-content">
+                Our services are classified under these NAICS codes, which represent the various sectors we operate in within the cleaning and maintenance industry.
+            </p>
+            
+            <div class="naics-grid">
+                <div class="naics-card">
+                    <div class="naics-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="naics-code">561710</div>
+                    <p class="naics-desc">Exterminating and Pest Control Services</p>
+                </div>
+                
+                <div class="naics-card">
+                    <div class="naics-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <div class="naics-code">561720</div>
+                    <p class="naics-desc">Janitorial Services</p>
+                </div>
+                
+                <div class="naics-card">
+                    <div class="naics-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="naics-code">561730</div>
+                    <p class="naics-desc">Landscaping Services</p>
+                </div>
+                
+                <div class="naics-card">
+                    <div class="naics-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <div class="naics-code">337127</div>
+                    <p class="naics-desc">Carpet and Upholstery Cleaners</p>
+                </div>
+                
+                <div class="naics-card">
+                    <div class="naics-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="naics-code">561790</div>
+                    <p class="naics-desc">Other Services to Buildings and Dwellings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Performance -->
+    <section class="content-section past-performance">
+        <div class="container">
+            <h2 class="section-title">Past Performance</h2>
+            <p class="section-content">
+                Our proven track record includes successful completion of commercial building contracts, residential moves, and ongoing maintenance services across various property types.
+            </p>
+            
+            <div class="performance-grid">
+                <div class="performance-card">
+                    <div class="performance-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Commercial Buildings</h3>
+                    <p>Building maintenance contracts</p>
+                </div>
+                
+                <div class="performance-card">
+                    <div class="performance-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Move In/Move Out</h3>
+                    <p>Condo cleaning services</p>
+                </div>
+                
+                <div class="performance-card">
+                    <div class="performance-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Upundel Capital House</h3>
+                    <p>Completed 2018</p>
+                </div>
+                
+                <div class="performance-card">
+                    <div class="performance-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>CSE-Court Condos</h3>
+                    <p>Completed 2015</p>
+                </div>
+                
+                <div class="performance-card">
+                    <div class="performance-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Kentucky Manor Building</h3>
+                    <p>Ongoing maintenance</p>
+                </div>
+                
+                <div class="performance-card">
+                    <div class="performance-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3>Airanchus Building</h3>
+                    <p>Commercial cleaning</p>
+                </div>
+                
+                <div class="performance-card">
+                    <div class="performance-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Chelsea Building</h3>
+                    <p>Completed 2014</p>
+                </div>
+                
+                <div class="performance-card">
+                    <div class="performance-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Davmar Building</h3>
+                    <p>Completed 2016</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Contact Information</h2>
+            <p class="section-content">
+                Get in touch with us for a free estimate or to schedule our services. We're always ready to assist with your cleaning needs.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <a href="tel:+11234567890">+1 240-486-8964</a>
+                    <p>Mon-Fri: 8am-6pm</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <a href="mailto:mudohoguishf@yahoo.com">mudohoguishf@yahoo.com</a>
+                    <p>We respond within 24 hours</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Website</h3>
+                    <a href="http://www.dirthunters.com">www.dirthunters.com</a>
+                    <p>Explore our full range of services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Contact Form Section -->
+<section id="quote" class="contact-form-section">
+    <div class="container">
+        <div class="contact-form">
+            <div class="form-header">
+                <h3>Get In Touch</h3>
+                <p>Request a quote or ask us any questions</p>
+            </div>
+            
+            <form id="quoteForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Type *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="vacuum">Vacuum Services</option>
+                            <option value="sweeping">Sweeping and Mopping</option>
+                            <option value="blowout">Blow Out Clean Services</option>
+                            <option value="window">Window Cleaning</option>
+                            <option value="lawn">Lawn Services</option>
+                            <option value="snow">Snow Removal</option>
+                            <option value="parking">Parking Lot Cleaning</option>
+                            <option value="other">Other Service</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your cleaning needs..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: white; padding: 40px 0; margin-top: 60px;">
+    <div class="container" style="text-align: center;">
+        <p style="margin-bottom: 10px; font-size: 1.1rem;">&copy; 2025 Dirt Hunters Cleaning Services. All rights reserved.</p>
+        <p style="color: #aaa; font-size: 0.9rem;">Designed by <span style="color: #ff4444; font-weight: bold;">
+        <a href="https://github.com/HanslettTheDev" style="color: inherit;">VenomRaiders</a></span>
         </p>
-      </section>
-
-      <section class="core-competencies">
-        <h3>Core Competencies</h3>
-        <p>
-          Dirt Hunters Cleaning Services finishes each project on schedule and
-          with highest level of quality. With focus on personalized services,
-          competitive rates and customer satisfaction, we’re always striving to
-          meet and exceed expectations.
-        </p>
-        <ul>
-          <li>Vacuum Services</li>
-          <li>Sweeping and Mopping Services</li>
-          <li>Blow Out Clean Services</li>
-          <li>Window Cleaning</li>
-          <li>Lawn Services</li>
-          <li>Snow Removal</li>
-          <li>Parking Lot</li>
-        </ul>
-      </section>
-
-      <!-- ===== DIFFERENTIATORS ===== -->
-      <section class="differentiators">
-        <h3>Differentiators</h3>
-        <ul>
-          <li
-            >Exceptional in providing customer satisfaction –
-            <em>"Your satisfaction is our Priority."</em></li
-          >
-          <li>Phenomenal strict Quality Control Standards</li>
-          <li>Qualified business best-in-industry solution</li>
-          <li
-            >Use scientific method to determine effectiveness of our cleaning
-            method</li
-          >
-          <li>Reliable Year-Round Scheduling</li>
-          <li>Eco-friendly cleaning products</li>
-          <li>Free on-site estimates</li>
-          <li>Affordable Cleaning Services</li>
-        </ul>
-      </section>
-
-      <section class="company-snapshot">
-        <h3>Company Snapshot</h3>
-        <ul>
-          <li
-            ><strong>Business Name:</strong> Dirt Hunters Cleaning Services</li
-          >
-          <li><strong>DUNS #:</strong> 117111375</li>
-          <li><strong>CAGE Code:</strong> 8CAN3</li>
-        </ul>
-      </section>
-
-      <section class="naics-codes">
-        <h3>NAICS Codes</h3>
-        <ul>
-          <li>561710 – Exterminating and Pest Control Services</li>
-          <li>561720 – Janitorial Services</li>
-          <li>561730 – Landscaping Services</li>
-          <li>337127 – Carpet and Upholstery Cleaners</li>
-          <li>561790 – Other Services to Buildings and Dwelling</li>
-        </ul>
-      </section>
-
-      <!-- ===== CONTINUATION ===== -->
-      <section class="additional-info">
-        <h3>Additional Information</h3>
-
-        <div class="subsection past-performance">
-          <h4>Past Performance</h4>
-          <ul>
-            <li>Commercial, Building Contracts</li>
-            <li>Move in/ move out Condos</li>
-            <li>Upundel Capital House (2018)</li>
-            <li>CSE-Court Condos (2015)</li>
-            <li>Kentucky Monor Building</li>
-            <li>Airanchus Building</li>
-            <li>Chelsea Building (2014)</li>
-            <li>Davmar Building (2016)</li>
-          </ul>
-        </div>
-
-        <div class="subsection certifications">
-          <h4>Certifications</h4>
-          <ul>
-            <li>Licensed & Insured Cleaning Contractor</li>
-            <li>OSHA Safety Certified Staff</li>
-            <li>Green Cleaning Certification</li>
-          </ul>
-        </div>
-
-        <div class="subsection contact-details">
-          <h4>Contact Information</h4>
-          <p><strong>Phone:</strong> (123) 456‑7890</p>
-          <p><strong>Email:</strong> info@dirthunters.com</p>
-          <p><strong>Website:</strong> www.dirthunters.com</p>
-        </div>
-      </section>
-    </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="flyer-footer">
-      <p>&copy; 2025 Dirt Hunters Cleaning Services. All rights reserved.</p>
-    </footer>
-  </body>
+    </div>
+</footer>
+</body>
 </html>
