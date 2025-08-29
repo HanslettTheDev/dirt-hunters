@@ -1,19 +1,171 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dirt Hunters Cleaning Services</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reviews Section Styles */
+        .reviews-section {
+            padding: 60px 0;
+            background: white;
+        }
+        
+        .reviews-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .review-form {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .review-form h3 {
+            color: #FF0000;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FF0000;
+            box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .rating {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .rating input {
+            display: none;
+        }
+        
+        .rating label {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .rating input:checked ~ label {
+            color: #ddd;
+        }
+        
+        .rating label:hover,
+        .rating label:hover ~ label,
+        .rating input:checked + label,
+        .rating input:checked ~ label {
+            color: #FFD700;
+        }
+        
+        .reviews-display {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .reviews-display h3 {
+            color: #FF0000;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .reviews-list {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .review-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reviewer-name {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .review-date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .review-rating {
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .review-text {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .no-reviews {
+            text-align: center;
+            color: #888;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .reviews-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav container">
             <div class="logo">
-                <!-- REPLACE THIS LINE WITH YOUR LOGO -->
                 <img src="logo.png" alt="Dirt Hunters Logo" style="width: 50px; height: 50px; margin-right: 10px;">
-                <!-- OR keep the text version with updated colors: -->
-                <!-- <div style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px; background: linear-gradient(45deg, #FF0000, #FF4444); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">DH</div> -->
                 DIRT HUNTERS
             </div>
             <ul class="nav-links">
@@ -301,6 +453,59 @@
         </div>
     </section>
 
+    <!-- NEW: Customer Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+            <p class="section-content">
+                See what our customers are saying about our services, or leave your own review to share your experience with Dirt Hunters Cleaning Services.
+            </p>
+            
+            <div class="reviews-container">
+                <div class="review-form">
+                    <h3>Leave a Review</h3>
+                    <form id="reviewForm">
+                        <div class="form-group">
+                            <label for="reviewerName">Your Name</label>
+                            <input type="text" id="reviewerName" required placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label>Your Rating</label>
+                            <div class="rating">
+                                <input type="radio" id="star5" name="rating" value="5" required>
+                                <label for="star5">★</label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4">★</label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3">★</label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2">★</label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1">★</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewTitle">Review Title</label>
+                            <input type="text" id="reviewTitle" required placeholder="Great service!">
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewText">Your Review</label>
+                            <textarea id="reviewText" required placeholder="Share your experience..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Review</button>
+                    </form>
+                </div>
+                
+                <div class="reviews-display">
+                    <h3>Customer Feedback</h3>
+                    <div class="reviews-list" id="reviewsList">
+                        <div class="no-reviews">No reviews yet. Be the first to leave a review!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Information -->
     <section class="content-section">
         <div class="container">
@@ -332,63 +537,109 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-<section id="quote" class="contact-form-section">
-    <div class="container">
-        <div class="contact-form">
-            <div class="form-header">
-                <h3>Get In Touch</h3>
-                <p>Request a quote or ask us any questions</p>
-            </div>
-            
-            <form id="quoteForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Type *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a service</option>
-                            <option value="vacuum">Vacuum Services</option>
-                            <option value="sweeping">Sweeping and Mopping</option>
-                            <option value="blowout">Blow Out Clean Services</option>
-                            <option value="window">Window Cleaning</option>
-                            <option value="lawn">Lawn Services</option>
-                            <option value="snow">Snow Removal</option>
-                            <option value="parking">Parking Lot Cleaning</option>
-                            <option value="other">Other Service</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your cleaning needs..." required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Submit Request</button>
-            </form>
-        </div>
-    </div>
-</section>
     <!-- Footer -->
     <footer style="background: #333; color: white; text-align: center; padding: 20px 0; margin-top: 60px;">
         <div class="container">
             <p>&copy; 2025 Dirt Hunters Cleaning Services. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Review functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const reviewForm = document.getElementById('reviewForm');
+            const reviewsList = document.getElementById('reviewsList');
+            
+            // Load existing reviews from localStorage
+            loadReviews();
+            
+            // Handle form submission
+            reviewForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('reviewerName').value;
+                const rating = document.querySelector('input[name="rating"]:checked').value;
+                const title = document.getElementById('reviewTitle').value;
+                const text = document.getElementById('reviewText').value;
+                
+                // Create review object
+                const review = {
+                    name: name,
+                    rating: rating,
+                    title: title,
+                    text: text,
+                    date: new Date().toLocaleDateString()
+                };
+                
+                // Save review
+                saveReview(review);
+                
+                // Add to display
+                addReviewToDisplay(review);
+                
+                // Reset form
+                reviewForm.reset();
+                
+                // Show thank you message
+                alert('Thank you for your review!');
+            });
+            
+            function saveReview(review) {
+                // Get existing reviews or create empty array
+                let reviews = JSON.parse(localStorage.getItem('dirtHuntersReviews')) || [];
+                
+                // Add new review
+                reviews.push(review);
+                
+                // Save back to localStorage
+                localStorage.setItem('dirtHuntersReviews', JSON.stringify(reviews));
+            }
+            
+            function loadReviews() {
+                // Get reviews from localStorage
+                const reviews = JSON.parse(localStorage.getItem('dirtHuntersReviews')) || [];
+                
+                // Clear no reviews message if there are reviews
+                if (reviews.length > 0) {
+                    reviewsList.innerHTML = '';
+                }
+                
+                // Add each review to display
+                reviews.forEach(review => {
+                    addReviewToDisplay(review);
+                });
+            }
+            
+            function addReviewToDisplay(review) {
+                // Remove no reviews message if it exists
+                const noReviews = reviewsList.querySelector('.no-reviews');
+                if (noReviews) {
+                    noReviews.remove();
+                }
+                
+                // Create stars based on rating
+                let stars = '';
+                for (let i = 0; i < 5; i++) {
+                    stars += i < review.rating ? '★' : '☆';
+                }
+                
+                // Create review element
+                const reviewElement = document.createElement('div');
+                reviewElement.classList.add('review-item');
+                reviewElement.innerHTML = `
+                    <div class="review-header">
+                        <span class="reviewer-name">${review.name}</span>
+                        <span class="review-date">${review.date}</span>
+                    </div>
+                    <div class="review-rating">${stars}</div>
+                    <h4>${review.title}</h4>
+                    <p class="review-text">${review.text}</p>
+                `;
+                
+                // Add to beginning of list (show newest first)
+                reviewsList.insertBefore(reviewElement, reviewsList.firstChild);
+            }
+        });
+    </script>
 </body>
 </html>
