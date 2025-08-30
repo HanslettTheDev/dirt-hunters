@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2c7db1;
-            --secondary: #33a583;
+            --primary: #cc0000;
+            --secondary: #ff0000;
             --accent: #ff9f40;
             --light: #f8f9fa;
             --dark: #343a40;
@@ -35,24 +35,91 @@
             padding: 0 20px;
         }
         
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 10px;
-            font-size: 28px;
-        }
+        .header {
+  background: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: linear-gradient(45deg, #dc2626, #ef4444);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.logo-text {
+    
+    display: inline-block;
+}
+.logo-text.left {
+    color: #0a9250;
+}
+
+.logo.right {
+    color: #cc0000;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #3b82f6;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+}
+
         
         .hero {
             text-align: center;
@@ -106,10 +173,6 @@
             width: 100%;
             height: 3px;
             background-color: var(--primary);
-        }
-        
-        .tab-content {
-            display: none;
         }
         
         .tab-content.active {
@@ -310,69 +373,31 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <header class="header">
+        <nav class="nav container">
             <div class="logo">
-                <i class="fas fa-broom"></i>
-                SparkleClean
+                <div style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px; background: linear-gradient(45deg, #FF0000, #FF4444); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">DH</div>
+                DIRT HUNTERS
             </div>
-        </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#reviews">REVIEWS</a></li>
+            </ul>
+            <a href="#quote" class="btn-primary">
+                <i class="fas fa-calendar-alt"></i> Book Schedule
+            </a>
+        </nav>
     </header>
     
     <section class="hero">
-        <div class="container">
-            <h1>Get in Touch With Us</h1>
-            <p>Reach out for a free quote or share your experience with our cleaning services</p>
-        </div>
+        <h1>Leave a Review</h1>
+        <p>Share your experience with our cleaning services</p>
     </section>
     
     <div class="container">
-        <div class="tabs">
-            <button class="tab-button active" data-tab="contact">Contact Us</button>
-            <button class="tab-button" data-tab="reviews">Leave a Review</button>
-        </div>
-        
-        <div id="contact-tab" class="tab-content active">
-            <div class="form-container">
-                <h2 class="form-title">Request a Free Quote</h2>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" placeholder="Your name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="Your email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="Your phone number">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="service">Service Type</label>
-                        <select id="service" required>
-                            <option value="">Select a service</option>
-                            <option value="residential">Residential Cleaning</option>
-                            <option value="commercial">Commercial Cleaning</option>
-                            <option value="deep">Deep Cleaning</option>
-                            <option value="move">Move In/Out Cleaning</option>
-                            <option value="carpet">Carpet Cleaning</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" placeholder="Tell us about your cleaning needs" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn">Send Request</button>
-                </form>
-            </div>
-        </div>
-        
         <div id="reviews-tab" class="tab-content">
             <div class="form-container review-form">
                 <h2 class="form-title">Share Your Experience</h2>
@@ -411,52 +436,19 @@
                     <button type="submit" class="btn">Submit Review</button>
                 </form>
             </div>
-            
-            <h2 class="form-title">Customer Reviews</h2>
-            <div class="reviews-container" id="reviews-container">
-                <!-- Reviews will be dynamically added here -->
-                <div class="no-reviews" id="no-reviews">
-                    <p>No reviews yet. Be the first to leave a review!</p>
-                </div>
-            </div>
         </div>
     </div>
     
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">
-                    <i class="fas fa-broom"></i>
-                    SparkleClean
-                </div>
-                <p>Professional cleaning services for home and office</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-                <p>&copy; 2023 SparkleClean. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+     <!-- Footer -->
+    <footer style="background: #333; color: white; padding: 40px 0; margin-top: 60px;">
+    <div class="container" style="text-align: center;">
+        <p style="margin-bottom: 10px; font-size: 1.1rem;">&copy; 2025 Dirt Hunters Cleaning Services. All rights reserved.</p>
+        <p style="color: #aaa; font-size: 0.9rem;">Designed by <span style="color: #ff4444; font-weight: bold;">
+        <a href="https://github.com/HanslettTheDev" style="color: inherit;">VenomRaiders</a></span>
+        </p>
+    </div>
 
     <script>
-        // Tab switching functionality
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and content
-                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                
-                // Add active class to clicked button
-                button.classList.add('active');
-                
-                // Show corresponding content
-                const tabId = button.getAttribute('data-tab');
-                document.getElementById(`${tabId}-tab`).classList.add('active');
-            });
-        });
-        
         // Sample reviews data
         const sampleReviews = [
             {
@@ -482,49 +474,6 @@
             }
         ];
         
-        // Function to display reviews
-        function displayReviews() {
-            const reviewsContainer = document.getElementById('reviews-container');
-            const noReviews = document.getElementById('no-reviews');
-            
-            // Check if there are reviews
-            const reviews = JSON.parse(localStorage.getItem('reviews')) || sampleReviews;
-            
-            if (reviews.length === 0) {
-                noReviews.style.display = 'block';
-                return;
-            }
-            
-            noReviews.style.display = 'none';
-            reviewsContainer.innerHTML = '';
-            
-            // Display each review
-            reviews.forEach(review => {
-                const reviewCard = document.createElement('div');
-                reviewCard.className = 'review-card';
-                
-                // Generate star rating HTML
-                let stars = '';
-                for (let i = 1; i <= 5; i++) {
-                    stars += `<i class="fas fa-star${i <= review.rating ? '' : '-half-alt'}" style="color: var(--accent);"></i>`;
-                }
-                
-                reviewCard.innerHTML = `
-                    <div class="review-header">
-                        <div class="reviewer-name">${review.name}</div>
-                        <div class="review-date">${review.date}</div>
-                    </div>
-                    <div class="review-rating">
-                        ${stars}
-                    </div>
-                    <h3>${review.title}</h3>
-                    <div class="review-content">${review.content}</div>
-                `;
-                
-                reviewsContainer.appendChild(reviewCard);
-            });
-        }
-        
         // Handle review form submission
         document.getElementById('review-form').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -548,36 +497,24 @@
                 date
             };
             
-            // Get existing reviews from localStorage or use sample reviews
-            const reviews = JSON.parse(localStorage.getItem('reviews')) || sampleReviews;
+            // // Get existing reviews from localStorage or use sample reviews
+            // const reviews = JSON.parse(localStorage.getItem('reviews')) || sampleReviews;
             
-            // Add new review
-            reviews.unshift(newReview);
+            // // Add new review
+            // reviews.unshift(newReview);
             
-            // Save to localStorage
-            localStorage.setItem('reviews', JSON.stringify(reviews));
+            // // Save to localStorage
+            // localStorage.setItem('reviews', JSON.stringify(reviews));
             
-            // Update display
-            displayReviews();
+            // // Update display
+            // displayReviews();
             
-            // Reset form
-            this.reset();
+            // // Reset form
+            // this.reset();
             
             // Show thank you message
             alert('Thank you for your review!');
         });
-        
-        // Handle contact form submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // In a real application, you would send this data to a server
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-        
-        // Initialize reviews on page load
-        document.addEventListener('DOMContentLoaded', displayReviews);
     </script>
 </body>
 </html>
