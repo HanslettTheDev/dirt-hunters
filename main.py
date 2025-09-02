@@ -89,12 +89,11 @@ def reviews():
         db.session.add(review)
         db.session.commit()
 
-        return redirect(url_for('index', _anchor="reviews"))
+        return redirect(url_for("index", _anchor="reviews"))
     return render_template("review.html")
 
 
 @app.route("/api/send_email", methods=["POST"])
-@cross_origin(supports_credentials=True)
 def send_email():
     try:
         data = request.get_json()
@@ -126,14 +125,14 @@ def send_email():
         # # Build email body
         # msg.body = f"""
         #     New cleaning service request received:
-        #     
+        #
         #     Full Name: {data['fullName']}
         #     Email: {data['email']}
         #     Phone: {data.get('phone', 'Not provided')}
         #     Service Type: {data['service']}
         #     Message:
         #     {data['message']}
-        #     
+        #
         #     Sent from website(www.dirt-hunters.com) contact form.
         # """
         #
