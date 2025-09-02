@@ -2,7 +2,6 @@ import os
 
 from dotenv import load_dotenv
 from flask import Flask, jsonify, redirect, render_template, request, url_for
-from flask_cors import CORS, cross_origin
 from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
@@ -27,7 +26,6 @@ app.config["MAIL_DEFAULT_SENDER"] = os.getenv("EMAIL_USER")
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("SQLALCHEMY_DATABASE_URI")
 
 
-cors = CORS(app)
 mail = Mail(app)
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
@@ -89,12 +87,11 @@ def reviews():
         db.session.add(review)
         db.session.commit()
 
-        return redirect(url_for('index', _anchor="reviews"))
+        return redirect(url_for("index", _anchor="reviews"))
     return render_template("review.html")
 
 
 @app.route("/api/send_email", methods=["POST"])
-@cross_origin(supports_credentials=True)
 def send_email():
     try:
         data = request.get_json()
@@ -126,14 +123,14 @@ def send_email():
         # # Build email body
         # msg.body = f"""
         #     New cleaning service request received:
-        #     
+        #
         #     Full Name: {data['fullName']}
         #     Email: {data['email']}
         #     Phone: {data.get('phone', 'Not provided')}
         #     Service Type: {data['service']}
         #     Message:
         #     {data['message']}
-        #     
+        #
         #     Sent from website(www.dirt-hunters.com) contact form.
         # """
         #
