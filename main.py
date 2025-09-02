@@ -2,7 +2,6 @@ import os
 
 from dotenv import load_dotenv
 from flask import Flask, jsonify, redirect, render_template, request, url_for
-from flask_cors import CORS, cross_origin
 from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
@@ -27,7 +26,6 @@ app.config["MAIL_DEFAULT_SENDER"] = os.getenv("EMAIL_USER")
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("SQLALCHEMY_DATABASE_URI")
 
 
-cors = CORS(app)
 mail = Mail(app)
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
