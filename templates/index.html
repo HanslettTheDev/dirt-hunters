@@ -383,6 +383,7 @@
         </div>
         <h3>Phone</h3>
         <a href="tel:+11234567890">+1 240-486-8964</a>
+        <a>Landline: 301-262-2151</a>
         <p>Mon-Fri: 8am-6pm</p>
       </div>
 
@@ -421,7 +422,7 @@
       <div class="review-card">
         <div class="review-header">
 <div class="reviewer-name">{{ review.name }}</div>
-<div class="review-date">{{ review.date_created | datetime_format("%d-%m-%y") }}</div>
+<div class="review-date">{{ review.date_created | datetime_format("%Y-%m-%d") }}</div>
         </div>
         <div class="review-rating">
 {% for i in range(0, review.rating) %}
@@ -463,7 +464,7 @@ Please be patient, reviews will be added soon
         <p>Request a quote or ask us any questions</p>
       </div>
 
-<form id="quoteForm" action="{{ url_for('index') }}">
+<form id="quoteForm">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Full Name *</label>

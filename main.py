@@ -1,7 +1,7 @@
 import os
 
 from dotenv import load_dotenv
-from flask import Flask, jsonify, render_template, request, url_for
+from flask import Flask, jsonify, redirect, render_template, request, url_for
 from flask_cors import CORS, cross_origin
 from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
@@ -54,7 +54,7 @@ class CustomerRequests(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     full_name: Mapped[str]
     email: Mapped[str]
-    phone_number: Mapped[int]
+    phone_number: Mapped[int] = mapped_column(default=0)
     service_type: Mapped[str]
     message: Mapped[str]
     date_created: Mapped[datetime] = mapped_column(
@@ -70,7 +70,7 @@ def datetime_format(value: datetime, format="%H:%M %d-%m-%y"):
     return value.strftime(format)
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
     reviews = db.session.execute(db.select(Reviews)).scalars()
     return render_template("index.html", reviews=reviews)
@@ -78,46 +78,72 @@ def index():
 
 @app.route("/reviews", methods=["GET", "POST"])
 def reviews():
+    if request.method == "POST":
+        review = Reviews(
+            name=request.form["name"],
+            rating=request.form["rating"],
+            review_title=request.form["title"],
+            review_content=request.form["content"],
+        )
+
+        db.session.add(review)
+        db.session.commit()
+
+        return redirect(url_for('index', _anchor="reviews"))
     return render_template("review.html")
 
 
 @app.route("/api/send_email", methods=["POST"])
 @cross_origin(supports_credentials=True)
 def send_email():
-    data = request.get_json()
+    try:
+        data = request.get_json()
 
-    required_fields = ["fullname", "email", "service", "message"]
-    for field in required_fields:
-        if not data.get(field):
-            return jsonify({"error": f"Missing required field: {field}"}), 400
+        required_fields = ["fullName", "email", "service", "message"]
+        for field in required_fields:
+            if not data.get(field):
+                return jsonify({"error": f"Missing required field: {field}"}), 400
 
-    # Create email message
-    msg = Message(
-        subject=f"New Cleaning Service Request - {data['service']}",
-        recipients=[
-            os.getenv("RECIPIENT_EMAIL")
-        ],  # Email where you want to receive requests
-    )
+        # Store in the database
+        customer_request = CustomerRequests(
+            full_name=data["fullName"],
+            email=data["email"],
+            phone_number=data["phone"],
+            service_type=data["service"],
+            message=data["message"],
+        )
+        db.session.add(customer_request)
+        db.session.commit()
 
-    # Build email body
-    msg.body = f"""
-    New cleaning service request received:
-    
-    Full Name: {data['fullName']}
-    Email: {data['email']}
-    Phone: {data.get('phone', 'Not provided')}
-    Service Type: {data['service']}
-    Message:
-    {data['message']}
-    
-    Sent from website(www.dirt-hunters.com) contact form.
-    """
+        # Create email message
+        # msg = Message(
+        #     subject=f"New Cleaning Service Request - {data['service']}",
+        #     recipients=[
+        #         os.getenv("RECIPIENT_EMAIL")
+        #     ],  # Email where you want to receive requests
+        # )
+        #
+        # # Build email body
+        # msg.body = f"""
+        #     New cleaning service request received:
+        #     
+        #     Full Name: {data['fullName']}
+        #     Email: {data['email']}
+        #     Phone: {data.get('phone', 'Not provided')}
+        #     Service Type: {data['service']}
+        #     Message:
+        #     {data['message']}
+        #     
+        #     Sent from website(www.dirt-hunters.com) contact form.
+        # """
+        #
+        # mail.send(msg)
 
-    mail.send(msg)
+        return jsonify({"message": "Form submitted successfully"}), 200
 
-    return jsonify({"message": "Form submitted successfully"}), 200
-
-    return jsonify()
+    except Exception as e:
+        print(e)
+        return jsonify({"error": f"An unexpected error occured"}), 400
 
 
 if __name__ == "__main__":

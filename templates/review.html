@@ -9,12 +9,13 @@
 <div class="container">
   <div class="form-container review-form">
     <h2 class="form-title">Share Your Experience</h2>
-    <form id="review-form">
+<form id="review-form" action="{{ url_for('reviews') }}" method="post">
       <div class="form-group">
         <label for="reviewer-name">Your Name</label>
         <input
           type="text"
           id="reviewer-name"
+        name="name"
           placeholder="Your name"
           required
         />
@@ -41,6 +42,7 @@
         <input
           type="text"
           id="review-title"
+            name="title"
           placeholder="Title of your review"
           required
         />
@@ -50,6 +52,7 @@
         <label for="review-content">Your Review</label>
         <textarea
           id="review-content"
+            name="content"
           placeholder="Share your experience with our cleaning service"
           required
         ></textarea>
@@ -59,67 +62,4 @@
     </form>
   </div>
 </div>
-
-<script>
-  // Sample reviews data
-  const sampleReviews = [
-    {
-      name: "Sarah Johnson",
-      rating: 5,
-      title: "Exceptional Service!",
-      content:
-        "The team did an amazing job cleaning my apartment. It's spotless and smells fantastic!",
-      date: "October 15, 2023",
-    },
-    {
-      name: "Michael Thompson",
-      rating: 4,
-      title: "Great Deep Cleaning",
-      content:
-        "They did a thorough deep cleaning of our house before we moved in. Very satisfied with the results.",
-      date: "October 10, 2023",
-    },
-    {
-      name: "Emily Rodriguez",
-      rating: 5,
-      title: "Regular Customer",
-      content:
-        "I've been using SparkleClean for my monthly cleaning for over a year now. Consistent quality every time.",
-      date: "October 5, 2023",
-    },
-  ];
-
-  // Handle review form submission
-  document
-    .getElementById("review-form")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById("reviewer-name").value;
-      const rating = document.querySelector(
-        'input[name="rating"]:checked',
-      ).value;
-      const title = document.getElementById("review-title").value;
-      const content = document.getElementById("review-content").value;
-      const date = new Date().toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-
-      // Create new review object
-      const newReview = {
-        name,
-        rating: parseInt(rating),
-        title,
-        content,
-        date,
-      };
-
-      // Show thank you message
-      alert("Thank you for your review!");
-
-      this.reset();
-    });
-</script>
 {% endblock content %}
