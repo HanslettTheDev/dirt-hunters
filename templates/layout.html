@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dirt Hunters Cleaning Services</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='logo.ico') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    {% block styles %} {% endblock styles %}
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="logo">
+          <div
+            style="
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              margin-right: 10px;
+              background: linear-gradient(45deg, #ff0000, #ff4444);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              font-weight: bold;
+            "
+          >
+            DH
+          </div>
+          DIRT HUNTERS
+        </div>
+        <ul class="nav-links">
+          <li class="active"><a href="{{ url_for('index') }}">HOME</a></li>
+          <li><a href="{{ url_for('index') }}#about">ABOUT US</a></li>
+          <li><a href="{{ url_for('index') }}#services">SERVICES</a></li>
+          <li><a href="{{ url_for('index') }}#contact">CONTACT</a></li>
+          <li><a href="{{ url_for('index') }}#reviews">REVIEWS</a></li>
+        </ul>
+        <a href="{{ url_for('index') }}#quote" class="btn-primary">
+          <i class="fas fa-calendar-alt"></i> Book Schedule
+        </a>
+      </nav>
+    </header>
+
+    {% block content %} {% endblock content %}
+
+    <!-- Footer -->
+    <footer
+      style="background: #333; color: white; padding: 40px 0; margin-top: 60px"
+    >
+      <div class="container" style="text-align: center">
+        <p style="margin-bottom: 10px; font-size: 1.1rem">
+          &copy; 2025 Dirt Hunters Cleaning Services. All rights reserved.
+        </p>
+        <p style="color: #aaa; font-size: 0.9rem">
+          Designed by
+          <span style="color: #ff4444; font-weight: bold">
+            <a href="https://github.com/HanslettTheDev" style="color: inherit"
+              >VenomRaiders</a
+            ></span
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Handle contact form submission
+      document
+        .getElementById("quoteForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          // Get form data
+          const formData = {
+            fullName: document.getElementById("fullname").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            service: document.getElementById("service").value,
+            message: document.getElementById("message").value,
+          };
+
+          try {
+            const response = await fetch(
+              "/api/send_email",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+              },
+            );
+
+            if (!response.ok) {
+              throw new Error(`Response status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            console.log(result);
+          } catch (error) {
+            console.error(error.message);
+          }
+
+          // In a real application, you would send this data to a server
+          alert("Thank you for your message! We will get back to you soon.");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

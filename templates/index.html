@@ -1,0 +1,515 @@
+{% extends 'layout.html' %} {% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="tagline">HIGHLY PROFESSIONAL CLEANING</div>
+        <h1>
+          <span class="highlight">EASY TO CLEAN</span><br />
+          HOUSE AND OFFICE
+        </h1>
+        <p class="subtitle">
+          Dirt Hunters Cleaning Services is known for quality services,
+          exceptional efficiency and the highest level of professionalism. No
+          matter what service you're looking for, we guarantee to exceed your
+          expectations.
+        </p>
+        <a href="#quote" class="btn-primary">
+          <i class="fas fa-comment-dollar"></i> Get a Quote
+        </a>
+      </div>
+      <div class="hero-image">
+        <div class="sparkle">✨</div>
+        <div class="sparkle">✨</div>
+        <div class="sparkle">✨</div>
+        <div class="sparkle">✨</div>
+        <div class="sparkle">✨</div>
+        <div
+          style="
+            width: 400px;
+            height: 400px;
+            background: none;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.3);
+          "
+        >
+          <img
+            style="object-fit: cover; border-radius: 20px"
+            src="{{ url_for('static', filename='logo.png') }}"
+            alt="Official Dirt Hunters Logo"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Services -->
+<section class="content-section" id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-content">
+      Dirt Hunters Cleaning Services finishes each project on schedule and with
+      highest level of quality. With focus on personalized services, competitive
+      rates and customer satisfaction, we're always striving to meet and exceed
+      expectations.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-vial-circle-check"></i>
+        </div>
+        <h3>Vacuum Services</h3>
+        <p>
+          Professional vacuum cleaning for all surfaces with industrial-grade
+          equipment
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-broom"></i>
+        </div>
+        <h3>Sweeping and Mopping</h3>
+        <p>Thorough floor cleaning and maintenance for all types of flooring</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-wind"></i>
+        </div>
+        <h3>Blow Out Clean Services</h3>
+        <p>
+          We will return your house to the level like it was new, except for the
+          walls
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-window-restore"></i>
+        </div>
+        <h3>Window Cleaning</h3>
+        <p>
+          Crystal clear window cleaning services for both interior and exterior
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h3>Lawn Services</h3>
+        <p>
+          Complete lawn care and maintenance including mowing and landscaping
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-snowflake"></i>
+        </div>
+        <h3>Snow Removal</h3>
+        <p>
+          Professional winter snow removal services for driveways and walkways
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-parking"></i>
+        </div>
+        <h3>Parking Lot Cleaning</h3>
+        <p>Professional parking lot cleaning and maintenance services</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-spray-can"></i>
+        </div>
+        <h3>Pressure Washing</h3>
+        <p>
+          High-pressure washing for exterior surfaces, decks, patios, walls and
+          driveways
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Snapshot -->
+<section id="about" class="content-section snapshot">
+  <div class="container">
+    <h2 class="section-title">Company Snapshot</h2>
+    <p class="section-content">
+      Learn more about our company credentials and identification codes that
+      showcase our legitimacy and professionalism in the cleaning industry.
+    </p>
+
+    <div class="company-grid">
+      <div class="company-card">
+        <div class="company-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="company-details">
+          <h3>Business Name</h3>
+          <p>Dirt Hunters Cleaning Services</p>
+        </div>
+      </div>
+
+      <div class="company-card">
+        <div class="company-icon">
+          <i class="fas fa-id-card"></i>
+        </div>
+        <div class="company-details">
+          <h3>DUNS Number</h3>
+          <p>117111375</p>
+        </div>
+      </div>
+
+      <div class="company-card">
+        <div class="company-icon">
+          <i class="fas fa-tag"></i>
+        </div>
+        <div class="company-details">
+          <h3>CAGE Code</h3>
+          <p>8CAN3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAICS Codes -->
+<section class="content-section">
+  <div class="container">
+    <h2 class="section-title">NAICS Codes</h2>
+    <p class="section-content">
+      Our services are classified under these NAICS codes, which represent the
+      various sectors we operate in within the cleaning and maintenance
+      industry.
+    </p>
+
+    <div class="naics-grid">
+      <div class="naics-card">
+        <div class="naics-icon">
+          <i class="fas fa-bug"></i>
+        </div>
+        <div class="naics-code">561710</div>
+        <p class="naics-desc">Exterminating and Pest Control Services</p>
+      </div>
+
+      <div class="naics-card">
+        <div class="naics-icon">
+          <i class="fas fa-broom"></i>
+        </div>
+        <div class="naics-code">561720</div>
+        <p class="naics-desc">Janitorial Services</p>
+      </div>
+
+      <div class="naics-card">
+        <div class="naics-icon">
+          <i class="fas fa-tree"></i>
+        </div>
+        <div class="naics-code">561730</div>
+        <p class="naics-desc">Landscaping Services</p>
+      </div>
+
+      <div class="naics-card">
+        <div class="naics-icon">
+          <i class="fas fa-couch"></i>
+        </div>
+        <div class="naics-code">337127</div>
+        <p class="naics-desc">Carpet and Upholstery Cleaners</p>
+      </div>
+
+      <div class="naics-card">
+        <div class="naics-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="naics-code">561790</div>
+        <p class="naics-desc">Other Services to Buildings and Dwellings</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Past Performance -->
+<section class="content-section past-performance">
+  <div class="container">
+    <h2 class="section-title">Past Performance</h2>
+    <p class="section-content">
+      Our proven track record includes successful completion of commercial
+      building contracts, residential moves, and ongoing maintenance services
+      across various property types.
+    </p>
+
+    <div class="performance-grid">
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <h3>Commercial Buildings</h3>
+        <p>Building maintenance contracts</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-home"></i>
+        </div>
+        <h3>Move In/Move Out</h3>
+        <p>Unit and single family homes</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-landmark"></i>
+        </div>
+        <h3>Capital House</h3>
+        <p>Ongoing Contract since 2018</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <h3>THE-Court Condos</h3>
+        <p>Ongoing Contract since 2015</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-hard-hat"></i>
+        </div>
+        <h3>Kentucky Manor Building</h3>
+        <p>Ongoing maintenance</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-city"></i>
+        </div>
+        <h3>Arundel Condominium Building</h3>
+        <p>Ongoing Contract since 2016</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-industry"></i>
+        </div>
+        <h3>CHELSEA Condominium</h3>
+        <p>Ongoing Contract since 2014</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <h3>DAVMAR Condominium</h3>
+        <p>Ongoing Contract since 2016</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <h3>BUCHANAN Condominium</h3>
+        <p>Ongoing Contract since 2023</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <h3>FAIRFAX Condominium</h3>
+        <p>Ongoing Contract since 2020</p>
+      </div>
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <h3>LINVILLE Condominium</h3>
+        <p>Ongoing Contract since 2017</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <h3>MAPPLE Condominium</h3>
+        <p>Ongoing Contract since 2024</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <h3>WATKINS AILEY Condominium</h3>
+        <p>Ongoing Contract since 2023</p>
+      </div>
+
+      <div class="performance-card">
+        <div class="performance-icon">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <h3>301H Street, NorthEast Condominium</h3>
+        <p>Ongoing Contract since 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Information -->
+<section id="contact" class="content-section">
+  <div class="container">
+    <h2 class="section-title">Contact Information</h2>
+    <p class="section-content">
+      Get in touch with us for a free estimate or to schedule our services.
+      We're always ready to assist with your cleaning needs.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <h3>Phone</h3>
+        <a href="tel:+11234567890">+1 240-486-8964</a>
+        <a>Landline: 301-262-2151</a>
+        <p>Mon-Fri: 8am-6pm</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3>Email</h3>
+        <a href="mailto:mudohoguishf@yahoo.com">mudohoguishf@yahoo.com</a>
+        <p>We respond within 24 hours</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <h3>Website</h3>
+        <a href="http://www.dirthunters.com">www.dirthunters.com</a>
+        <p>Explore our full range of services</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="reviews-section">
+  <div class="container">
+    <h2 class="section-title">Customer Reviews</h2>
+    <p class="section-content">
+      See what our customers are saying about our services, or leave your own
+      review to share your experience with Dirt Hunters Cleaning Services.
+    </p>
+
+    <div class="reviews-container">
+{% if reviews %}
+{% for review in reviews %}
+      <div class="review-card">
+        <div class="review-header">
+<div class="reviewer-name">{{ review.name }}</div>
+<div class="review-date">{{ review.date_created | datetime_format("%Y-%m-%d") }}</div>
+        </div>
+        <div class="review-rating">
+{% for i in range(0, review.rating) %}
+          <i class="fas fa-star" style="color: var(--accent)"></i>
+{% endfor %}
+        </div>
+<h3>{{ review.review_title }}</h3>
+        <div class="review-content">
+        {{ review.review_content }}
+        </div>
+      </div>
+
+{% endfor %}
+{% else %}
+Please be patient, reviews will be added soon
+{%  endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section>
+  <div class="container">
+    <div class="review-form">
+      <h3>Adding a Review?</h3>
+      <p>
+        You can rate our services in our
+        <a href="{{ url_for('reviews') }}">Leave a Review</a> page
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="quote" class="contact-form-section">
+  <div class="container">
+    <div class="contact-form">
+      <div class="form-header">
+        <h3>Get In Touch</h3>
+        <p>Request a quote or ask us any questions</p>
+      </div>
+
+<form id="quoteForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="service">Service Type *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="vacuum">Vacuum Services</option>
+              <option value="sweeping">Sweeping and Mopping</option>
+              <option value="blowout">Blow Out Clean Services</option>
+              <option value="window">Window Cleaning</option>
+              <option value="lawn">Lawn Services</option>
+              <option value="snow">Snow Removal</option>
+              <option value="parking">Parking Lot Cleaning</option>
+              <option value="other">Other Service</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Tell us about your cleaning needs..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock content %}
