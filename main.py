@@ -139,9 +139,4 @@ def send_email():
         return jsonify({"message": "Form submitted successfully"}), 200
 
     except Exception as e:
-        print(e)
         return jsonify({"error": f"An unexpected error occured"}), 400
-
-
-if __name__ == "__main__":
-    app.run(debug=True)

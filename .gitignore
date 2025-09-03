@@ -3,3 +3,4 @@ env
 .env
 instance
 __pycache__
+run.py
