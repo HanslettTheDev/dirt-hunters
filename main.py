@@ -6,7 +6,8 @@ from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 
-load_dotenv()
+project_folder = os.path.expanduser("~/dirt-hunters")
+load_dotenv(os.path.join(project_folder, ".env"))
 
 app = Flask(__name__)
 
