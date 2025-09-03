@@ -6,7 +6,8 @@ from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 
-load_dotenv()
+project_folder = os.path.expanduser("~/dirt-hunters")
+load_dotenv(os.path.join(project_folder, ".env"))
 
 app = Flask(__name__)
 
@@ -139,9 +140,4 @@ def send_email():
         return jsonify({"message": "Form submitted successfully"}), 200
 
     except Exception as e:
-        print(e)
         return jsonify({"error": f"An unexpected error occured"}), 400
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
