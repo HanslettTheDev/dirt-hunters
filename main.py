@@ -6,8 +6,8 @@ from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 
-project_folder = os.path.expanduser("~/dirt-hunters")
-load_dotenv(os.path.join(project_folder, ".env"))
+# project_folder = os.path.expanduser("~/dirt-hunters")
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -16,14 +16,6 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config["MAIL_SERVER"] = "smtp.gmail.com"  # Use your email provider's SMTP server
-app.config["MAIL_PORT"] = 587
-app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USERNAME"] = os.getenv("EMAIL_USER")  # Your email address
-app.config["MAIL_PASSWORD"] = os.getenv(
-    "EMAIL_PASSWORD"
-)  # Your email password or app password
-app.config["MAIL_DEFAULT_SENDER"] = os.getenv("EMAIL_USER")
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("SQLALCHEMY_DATABASE_URI")
 
 
@@ -114,28 +106,28 @@ def send_email():
         db.session.commit()
 
         # Create email message
-        # msg = Message(
-        #     subject=f"New Cleaning Service Request - {data['service']}",
-        #     recipients=[
-        #         os.getenv("RECIPIENT_EMAIL")
-        #     ],  # Email where you want to receive requests
-        # )
-        #
-        # # Build email body
-        # msg.body = f"""
-        #     New cleaning service request received:
-        #
-        #     Full Name: {data['fullName']}
-        #     Email: {data['email']}
-        #     Phone: {data.get('phone', 'Not provided')}
-        #     Service Type: {data['service']}
-        #     Message:
-        #     {data['message']}
-        #
-        #     Sent from website(www.dirt-hunters.com) contact form.
-        # """
-        #
-        # mail.send(msg)
+        msg = Message(
+            subject=f"New Cleaning Service Request - {data['service']}",
+            recipients=[
+                os.getenv("RECIPIENT_EMAIL"),
+            ],  # Email where you want to receive requests
+        )
+
+        # Build email body
+        msg.body = f"""
+            New cleaning service request received:
+
+            Full Name: {data['fullName']}
+            Email: {data['email']}
+            Phone: {data.get('phone', 'Not provided')}
+            Service Type: {data['service']}
+            Message:
+            {data['message']}
+
+            Sent from website(www.dirt-hunters.com) contact form.
+        """
+
+        mail.send(msg)
 
         return jsonify({"message": "Form submitted successfully"}), 200
 
