@@ -34,7 +34,7 @@ def get_access_token():
         )
 
 
-def send_email_via_graph_api(subject, recipient, body):
+def send_email_via_graph_api(subject, recipients, body, content_type="text"):
     access_token = get_access_token()
     headers = {
         "Authorization": f"Bearer {access_token}",
@@ -45,7 +45,7 @@ def send_email_via_graph_api(subject, recipient, body):
         "message": {
             "subject": subject,
             "body": {
-                "contentType": "Text",
+                "contentType": content_type,
                 "content": body,
             },
             "from": {
@@ -53,7 +53,7 @@ def send_email_via_graph_api(subject, recipient, body):
                     "address": MAIL_USERNAME,
                 }
             },
-            "toRecipients": [{"emailAddress": {"address": recipient}}],
+            "toRecipients": recipients,
         }
     }
     user_endpoint = f"https://graph.microsoft.com/v1.0/users/{MAIL_USERNAME}/sendMail"
@@ -69,12 +69,8 @@ def send_email_via_graph_api(subject, recipient, body):
     return response.status_code
 
 
-def send_welcome_email():
+def send_test_mail():
     subject = "Welcome"
     recipient = "hanslettthedev@gmail.com"
     body = f"Hi there, \n\nWelcome, we are glad to have you! "
     send_email_via_graph_api(subject, recipient, body)
-
-
-if __name__ == "__main__":
-    print(send_welcome_email())
