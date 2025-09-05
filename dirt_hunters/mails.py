@@ -4,10 +4,6 @@ import os
 import msal
 import requests
 from dotenv import load_dotenv
-from flask import url_for
-from flask_mail import Message
-
-from main import app
 
 load_dotenv()
 

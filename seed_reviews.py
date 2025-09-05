@@ -22,7 +22,11 @@ review_data = [
     },
 ]
 
-from main import Reviews, app, db
+from dirt_hunters import create_app
+from dirt_hunters.extensions import db
+from dirt_hunters.models.models import Reviews
+
+app = create_app()
 
 
 def seed_reviews():
