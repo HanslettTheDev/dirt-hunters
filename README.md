@@ -1,30 +1,32 @@
-Based on the codebase context, you're asking for a README document for the **Dirt Hunters Cleaning Services** Flask web application located in the `HanslettTheDev/dirt-hunters` repository <cite/>. This is a Flask-based web application that uses SQLite for data persistence and Microsoft Graph API for email functionality [1](#0-0) .
-
 # Dirt Hunters Cleaning Services - Local Installation Guide
 
 ## Prerequisites
 
 Before starting, ensure you have the following installed <cite/>:
+
 - Python 3.8 or higher
-- pip package manager  
+- pip package manager
 - Git for version control
 - A Microsoft Azure account with Graph API access (for email functionality)
 
 ## Quick Start
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/HanslettTheDev/dirt-hunters.git
 cd dirt-hunters
 ```
 
 ### 2. Create Virtual Environment
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 ### 3. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -60,8 +62,9 @@ python seed_reviews.py
 ```
 
 This script will:
+
 - Drop existing tables
-- Create new database tables  
+- Create new database tables
 - Populate sample customer reviews
 
 ### 6. Run the Application
@@ -81,12 +84,12 @@ The application uses Flask's application factory pattern [1](#0-0) :
 - **Entry Point**: `main.py` imports and runs the Flask app
 - **Application Factory**: `dirt_hunters.create_app()` handles initialization
 - **Database**: SQLite database (`hunters.db`) with SQLAlchemy ORM
-- **Email**: Microsoft Graph API integration for contact form submissions [5](#0-4) 
+- **Email**: Microsoft Graph API integration for contact form submissions [5](#0-4)
 - **Frontend**: Jinja2 templates with responsive design and JavaScript form handling
 
 ## Key Features
 
-- **Homepage**: Single-page application with service showcase, company information, and customer reviews [6](#0-5) 
+- **Homepage**: Single-page application with service showcase, company information, and customer reviews [6](#0-5)
 - **Contact Form**: Asynchronous form submission with email notifications
 - **Review System**: Customer review display and submission functionality
 - **Responsive Design**: Mobile-optimized interface
@@ -112,6 +115,7 @@ After setup, verify your installation:
 The application includes a comprehensive seeding script that populates the database with sample customer reviews [7](#0-6) . The email functionality requires proper Microsoft Azure configuration for the contact form to work correctly [8](#0-7) . The application uses environment detection to automatically load the correct configuration based on the deployment context [3](#0-2) .
 
 Wiki pages you might want to explore:
+
 - [Getting Started (HanslettTheDev/dirt-hunters)](/wiki/HanslettTheDev/dirt-hunters#2)
 - [Application Architecture (HanslettTheDev/dirt-hunters)](/wiki/HanslettTheDev/dirt-hunters#3)
 - [Frontend (HanslettTheDev/dirt-hunters)](/wiki/HanslettTheDev/dirt-hunters#4)
@@ -119,6 +123,7 @@ Wiki pages you might want to explore:
 ### Citations
 
 **File:** main.py (L1-3)
+
 ```python
 from dirt_hunters import create_app
 
@@ -126,6 +131,7 @@ app = create_app()
 ```
 
 **File:** dirt_hunters/config.py (L6-11)
+
 ```python
 if "liveconsole" in gethostname():
     project_folder = os.path.expanduser("~/dirt-hunters")
@@ -136,6 +142,7 @@ else:
 ```
 
 **File:** seed_reviews.py (L1-23)
+
 ```python
 review_data = [
     {
@@ -163,6 +170,7 @@ review_data = [
 ```
 
 **File:** seed_reviews.py (L45-49)
+
 ```python
 if __name__ == "__main__":
     with app.app_context():
@@ -172,6 +180,7 @@ if __name__ == "__main__":
 ```
 
 **File:** dirt_hunters/mails.py (L10-15)
+
 ```python
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
@@ -182,6 +191,7 @@ MAIL_USERNAME = os.getenv("MAIL_USERNAME")
 ```
 
 **File:** dirt_hunters/mails.py (L37-69)
+
 ```python
 def send_email_via_graph_api(subject, recipients, body, content_type="text"):
     access_token = get_access_token()
@@ -219,6 +229,7 @@ def send_email_via_graph_api(subject, recipients, body, content_type="text"):
 ```
 
 **File:** dirt_hunters/core/routes.py (L12-15)
+
 ```python
 @core.route("/", methods=["GET", "POST"])
 def index():
